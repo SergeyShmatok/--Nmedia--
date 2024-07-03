@@ -1,0 +1,46 @@
+plugins {
+    alias(libs.plugins.android.application) // - // -
+    alias(libs.plugins.jetbrains.kotlin.android) // - тут (в модуле) эти плагины уже подключены
+}
+
+android {
+    namespace 'ru.netology.nmedia'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "ru.netology.nmedia" // имя, под которым приложение будет выложено в store
+        minSdk 24 // минимальный sdk
+        targetSdk 34
+        versionCode 1 // код версии (при выпускании обновления нужно увеличивать число)
+        versionName "1.0" // имя версии
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // для тестов
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // защита приложения от хакеров/кражи и т.д.
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8 // указание на то, что код совместим с Java версии 8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8' // тоже самое, - Kotlin, джава версия 8
+    }
+}
+
+dependencies {
+// тут зависимости
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
