@@ -2,4 +2,13 @@
 <resources>
     <string name="app_name">НМедиа</string>
     <string name="greeting_phrase">НМедиа!</string>
+    <string name="distance_of_numbers_to_icon">11</string>
+    <string name="number_of_likes">10</string>
+    <string name="number_of_shares">5</string>
+    <string name="number_of_views">5</string>
+    <string name="avatar">аватар</string>
+    <string name="menu">меню</string>
+    <string name="like_icon">иконка лайков</string>
+    <string name="share_icon">иконка \"поделились\"</string>
+    <string name="eye_icon">иконка \"глаз\"</string>
 </resources>

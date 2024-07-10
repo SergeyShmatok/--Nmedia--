@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Nmedia</string>
     <string name="greeting_phrase">NMedia!</string>
+    <string name="distance_of_numbers_to_icon">11</string>
+    <string name="number_of_likes">10</string>
+    <string name="number_of_shares">5</string>
+    <string name="number_of_views">5</string>
+    <string name="avatar">avatar</string>
+    <string name="menu">menu</string>
+    <string name="like_icon">like icon</string>
+    <string name="share_icon">share_icon</string>
+    <string name="eye_icon">eye icon</string>
 </resources>
