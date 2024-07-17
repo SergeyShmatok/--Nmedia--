@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/common_spacing">
+    android:padding="@dimen/common_spacing" >
 
 
     <ImageView
@@ -13,6 +13,7 @@
         android:layout_height="@dimen/posts_avatar_size"
         android:layout_marginBottom="@dimen/common_spacing"
         android:contentDescription="@string/avatar"
+        android:src="@drawable/ic_netology_48dp"
         app:layout_constraintBottom_toBottomOf="@id/barrier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -86,7 +87,7 @@
         app:constraint_referenced_ids="content" />
 
     <ImageView
-        android:id="@+id/imLikes"
+        android:id="@+id/icLikes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing"
@@ -101,18 +102,18 @@
         android:id="@+id/likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_spacing"
         android:layout_marginStart="@dimen/distance_of_numbers_to_icon"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginTop="@dimen/common_spacing"
         android:text="@string/number_of_likes"
-        app:layout_constraintStart_toEndOf="@+id/imLikes" />
+        app:layout_constraintStart_toEndOf="@+id/icLikes"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
 
     <ImageView
-        android:id="@+id/imShares"
+        android:id="@+id/icShares"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_spacing"
         android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
         android:contentDescription="@string/share_icon"
         app:layout_constraintStart_toEndOf="@+id/likes"
         app:layout_constraintTop_toBottomOf="@id/barrier2"
@@ -122,14 +123,14 @@
         android:id="@+id/shares"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_shares"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
-        android:layout_marginTop="@dimen/common_spacing"
         android:layout_marginStart="@dimen/distance_of_numbers_to_icon"
-        app:layout_constraintStart_toEndOf="@+id/imShares" />
+        android:layout_marginTop="@dimen/common_spacing"
+        android:text="@string/number_of_shares"
+        app:layout_constraintStart_toEndOf="@+id/icShares"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
 
     <ImageView
-        android:id="@+id/eye"
+        android:id="@+id/icEye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing"
@@ -143,9 +144,9 @@
         android:id="@+id/views"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_views"
         android:layout_marginStart="@dimen/distance_of_numbers_to_icon"
         android:layout_marginTop="@dimen/common_spacing"
+        android:text="@string/number_of_views"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier2" />
 
