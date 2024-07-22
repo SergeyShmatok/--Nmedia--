@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         val viewModel: PostViewModel by viewModels()
         viewModel.data.observe(this) {
             with(binding) {
-                author.text = postNetoGreeting.author
-                published.text = postNetoGreeting.published
-                content.text = postNetoGreeting.content
-                likes.text = clicksInVkFormat(postNetoGreeting.likes)
-                shares.text = clicksInVkFormat(postNetoGreeting.shares)
-                views.text = clicksInVkFormat(postNetoGreeting.views)
+                author.text = it.author
+                published.text = it.published
+                content.text = it.content
+                likes.text = clicksInVkFormat(it.likes)
+                shares.text = clicksInVkFormat(it.shares)
+                views.text = clicksInVkFormat(it.views)
                 icLikes.setImageResource(
-                    if (postNetoGreeting.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
+                    if (it.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
                 )
             }
         }
