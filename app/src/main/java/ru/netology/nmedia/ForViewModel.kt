@@ -6,11 +6,11 @@ class PostViewModel : ViewModel() {
 
     private val repository1 = PostRepositoryModel()
 
-    val data = repository1.get()
+    val data = repository1.getAll()
 
-    fun like() = repository1.like()
+    fun likeById(id: Long) = repository1.likeById(id)
 
-    fun clickOnShare() = repository1.clickOnShare()
+    fun clickingShareById(id: Long) = repository1.clickingShareById(id)
 
-    fun clickOnEye() = repository1.clickOnEye()
+    fun clickingEyeById(id: Long) = repository1.clickingEyeById(id)
 }

@@ -11,4 +11,5 @@
     <string name="like_icon">иконка лайков</string>
     <string name="share_icon">иконка \"поделились\"</string>
     <string name="eye_icon">иконка \"глаз\"</string>
+    <string name="it_s_just_a_scroll">Это просто \"скролл\"</string>
 </resources>
