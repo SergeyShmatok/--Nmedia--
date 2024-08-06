@@ -11,4 +11,15 @@
     <string name="share_icon">share_icon</string>
     <string name="eye_icon">eye icon</string>
     <string name="it_s_just_a_scroll">It\'s just a scroll</string>
+    <string name="remove">Remove</string>
+    <string name="create">Create</string>
+    <string name="edit">Edit</string>
+    <string name="send_button_description">"send"</string>
+    <string name="hint_text">Write text…</string>
+    <string name="error_empty_content">This field can\'t be empty</string>
+    <string name="empty_string" />
+    <string name="ic_edit_pencil">pencil</string>
+    <string name="edit_message"><big><b>Edit message</b></big></string>
+    <string name="cross">cross</string>
+
 </resources>

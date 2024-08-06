@@ -3,4 +3,16 @@
     <dimen name="common_spacing">16dp</dimen>
     <dimen name="posts_avatar_size">48dp</dimen>
     <dimen name="distance_of_numbers_to_icon">7dp</dimen>
+    <dimen name="send_image_dimension_width">48dp</dimen>
+    <dimen name="send_image_dimension_height">48dp</dimen>
+    <dimen name="margin_top_for_send">4dp</dimen>
+    <dimen name="standart_button_width">56dp</dimen>
+    <dimen name="standart_button_height">56dp</dimen>
+    <dimen name="padding_ic_edit">10dp</dimen>
+    <dimen name="cross_paddin_8dp">14dp</dimen>
+    <dimen name="special_spacing_interval_for_cross">17dp</dimen>
+    <dimen name="padding_start_text_8dp">8dp</dimen>
+    <dimen name="padding_top_edit_message_10dp">10dp</dimen>
+    <dimen name="padding_top_editable_message_2dp">2dp</dimen>
+    <dimen name="specific_margin_bottom_1dp">1dp</dimen>
 </resources>

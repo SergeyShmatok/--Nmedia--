@@ -12,4 +12,14 @@
     <string name="share_icon">иконка \"поделились\"</string>
     <string name="eye_icon">иконка \"глаз\"</string>
     <string name="it_s_just_a_scroll">Это просто \"скролл\"</string>
+    <string name="remove">Удалить</string>
+    <string name="create">Создать</string>
+    <string name="edit">Изменить</string>
+    <string name="send_button_description">"отправить"</string>
+    <string name="hint_text">Написать текст…</string>
+    <string name="error_empty_content">Это поле не может быть пустым</string>
+    <string name="empty_string" />
+    <string name="ic_edit_pencil">карандаш</string>
+    <string name="edit_message">Редактировать сообщение</string>
+    <string name="cross">крест</string>
 </resources>

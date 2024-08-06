@@ -2,21 +2,30 @@ package ru.netology.nmedia
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.databinding.CardPostBinding
 
-typealias OnLikeListener = (post: Post) -> Unit
-typealias OnShareListener = (post: Post) -> Unit
-typealias OnEyeListener = (post: Post) -> Unit
+//typealias OnLikeListener = (post: Post) -> Unit
+//typealias OnShareListener = (post: Post) -> Unit
+//typealias OnEyeListener = (post: Post) -> Unit
+//typealias OnRemoveListener = (post: Post) -> Unit
+
+
+interface OnInteractionListener {
+    fun onLike(post: Post) {}
+    fun onEdit(post: Post) {}
+    fun onRemove(post: Post) {}
+    fun onShare(post: Post) {}
+    fun onEye(post: Post) {}
+}
 
 //-------------------- PostAdapter -------------------
 
 class PostAdapter(
-    private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener,
-    private val onEyeListener: OnEyeListener,
+    private val onInteractionListener: OnInteractionListener,
 ) :
     ListAdapter<Post, PostHolder>(PostDiffCallback()) {
 
@@ -24,9 +33,7 @@ class PostAdapter(
         val view =
             CardPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PostHolder(
-            view, onLikeListener,
-            onShareListener,
-            onEyeListener,
+            view, onInteractionListener
         )
     }
 
@@ -39,10 +46,9 @@ class PostAdapter(
 //--------------------- PostHolder ---------------------
 
 class PostHolder(
-    private val view: CardPostBinding, private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener,
-    private val onEyeListener: OnEyeListener,
-) :
+    private val view: CardPostBinding,
+    private val onInteractionListener: OnInteractionListener,
+    ) :
     RecyclerView.ViewHolder(view.root) {
     fun bind(post: Post) {
         view.apply {
@@ -58,14 +64,39 @@ class PostHolder(
             )
 
             icLikes.setOnClickListener {
-                onLikeListener(post)
+                onInteractionListener.onLike(post)
             }
             icShares.setOnClickListener {
-                onShareListener(post)
+                onInteractionListener.onShare(post)
             }
 
             icEye.setOnClickListener {
-                onEyeListener(post)
+                onInteractionListener.onEye(post)
+            }
+
+            icMenu.setOnClickListener {
+                PopupMenu(it.context, it).apply {
+                    inflate(R.menu.popup_post_menu)
+                    setOnMenuItemClickListener { item ->
+                        when (item.itemId) {
+
+                            R.id.remove -> {
+                                onInteractionListener.onRemove(post)
+                                true
+                            }
+
+                            R.id.edit -> {
+                                onInteractionListener.onEdit(post)
+                                true
+                            }
+
+                            else -> false
+
+                        }
+
+                    }
+
+                }.show()
             }
 
         }
@@ -73,7 +104,6 @@ class PostHolder(
 }
 
 //---------------------- DiffUtil -----------------------
-
 
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
@@ -85,4 +115,4 @@ class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
     }
 }
 
-//------------------------- End --------------------------
+//------------------------- End

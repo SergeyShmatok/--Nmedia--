@@ -10,8 +10,6 @@ data class Post(
     val likes: Int = 999,
     val shares: Int = 1699,
     val views: Int = 1_099_999,
-    val likedByMe: Boolean = true,
+    val likedByMe: Boolean = false,
 )
-
-
 
