@@ -29,7 +29,7 @@ class PostViewModel : ViewModel() {
 
     fun removeById(id: Long) = repository1.removeById(id)
 
-//---------------------------- Edited ----------------------------
+//---------------------------- Editing ----------------------------
 
     val edited = MutableLiveData(empty)
 

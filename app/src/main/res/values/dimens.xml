@@ -2,7 +2,7 @@
 <resources>
     <dimen name="common_spacing">16dp</dimen>
     <dimen name="posts_avatar_size">48dp</dimen>
-    <dimen name="distance_of_numbers_to_icon">7dp</dimen>
+    <dimen name="margins_for_icons">4dp</dimen>
     <dimen name="send_image_dimension_width">48dp</dimen>
     <dimen name="send_image_dimension_height">48dp</dimen>
     <dimen name="margin_top_for_send">4dp</dimen>
@@ -15,4 +15,5 @@
     <dimen name="padding_top_edit_message_10dp">10dp</dimen>
     <dimen name="padding_top_editable_message_2dp">2dp</dimen>
     <dimen name="specific_margin_bottom_1dp">1dp</dimen>
+    <dimen name="standard_icon_size">24dp</dimen>
 </resources>

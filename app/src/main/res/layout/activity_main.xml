@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="228dp"
+        tools:layout_editor_absoluteX="-64dp"
+        tools:layout_editor_absoluteY="-306dp"
         tools:listitem="@layout/card_post" />
 
     <View
@@ -72,7 +72,6 @@
         android:ellipsize="end"
         android:paddingStart="@dimen/padding_start_text_8dp"
         android:paddingTop="@dimen/padding_top_editable_message_2dp"
-
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="@+id/icEdit"
         app:layout_constraintEnd_toStartOf="@+id/icCross"
@@ -119,17 +118,18 @@
 
     <EditText
         android:id="@+id/content"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_light"
         android:hint="@string/hint_text"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:padding="@dimen/common_spacing"
+        android:paddingEnd="@dimen/standart_button_width"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/send"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolsTop" />
+        app:layout_constraintTop_toTopOf="@id/toolsTop"
+        tools:ignore="RtlSymmetry" />
 
     <ImageButton
         android:id="@+id/send"
@@ -139,7 +139,6 @@
         android:contentDescription="@string/send_button_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/content"
         app:srcCompat="@android:drawable/ic_menu_send" />
 
     <androidx.constraintlayout.widget.Group

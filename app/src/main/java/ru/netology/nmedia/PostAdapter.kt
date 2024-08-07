@@ -55,13 +55,11 @@ class PostHolder(
             author.text = post.author
             published.text = post.published
             content.text = post.content
-            likes.text = clicksInVkFormat(post.likes)
-            shares.text = clicksInVkFormat(post.shares)
-            views.text = clicksInVkFormat(post.views)
+            icLikes.text = clicksInVkFormat(post.likes)
+            icShares.text = clicksInVkFormat(post.shares)
+            icEye.text = clicksInVkFormat(post.views)
 
-            icLikes.setImageResource(
-                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-            )
+            icLikes.isChecked = post.likedByMe
 
             icLikes.setOnClickListener {
                 onInteractionListener.onLike(post)

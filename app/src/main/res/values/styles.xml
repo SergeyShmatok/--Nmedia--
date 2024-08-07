@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.AppTheme.LikeCheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/color_like_selector</item>
+    </style>
+
+
+    <style name="Widget.AppTheme.LikeButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/color_like_selector</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="rippleColor">@color/light_grey_lightness</item>
+        <!--        <item name="app:backgroundTint">@color/medium_grey</item>-->
+    </style>
+
+
+    <style name="Widget.AppTheme.ShareButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/medium_grey</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="rippleColor">@color/light_grey_lightness</item>
+
+        <!--        <item name="backgroundTint">@color/medium_grey</item>-->
+
+    </style>
+
+
+    <style name="Widget.AppTheme.EyeButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/medium_grey</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="rippleColor">@color/light_grey_lightness</item>
+
+        <!--        <item name="backgroundTint">@color/medium_grey</item>-->
+
+    </style>
+
+    <style name="Widget.AppTheme.MenuButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/medium_grey</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="rippleColor">@color/light_grey_lightness</item>
+
+        <!--        <item name="backgroundTint">@color/medium_grey</item>-->
+
+    </style>
+
+</resources>
