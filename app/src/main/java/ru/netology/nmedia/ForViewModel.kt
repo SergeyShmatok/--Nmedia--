@@ -2,6 +2,7 @@ package ru.netology.nmedia
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import ru.netology.nmedia.other_date_and_service.Post
 
 private val empty = Post(
     id = 0,
@@ -9,6 +10,7 @@ private val empty = Post(
     content = "",
     published = "",
     likedByMe = false,
+    link = "",
 )
 
 class PostViewModel : ViewModel() {
@@ -31,7 +33,7 @@ class PostViewModel : ViewModel() {
 
 //---------------------------- Editing ----------------------------
 
-    val edited = MutableLiveData(empty)
+    private val edited = MutableLiveData(empty)
 
     fun edit(post: Post) {
         edited.value = post

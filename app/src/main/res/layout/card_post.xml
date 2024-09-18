@@ -17,6 +17,7 @@
         app:layout_constraintBottom_toBottomOf="@id/barrier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@sample/posts.json/data/authorAvatar" />
 
     <TextView
@@ -73,21 +74,75 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing"
-        android:layout_marginBottom="@dimen/common_spacing"
         android:autoLink="web"
-        app:layout_constraintBottom_toBottomOf="@id/barrier2"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/image_content_by_link"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="VisualLintLongText"
         tools:text="@sample/posts.json/data/content" />
-    <!--    android:gravity="center"-->
+
+
+    <ImageView
+        android:id="@+id/image_content_by_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_by_link"
+        android:padding="16dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:maxWidth="200dp"
+        android:maxHeight="200dp"
+        android:minWidth="100dp"
+        android:minHeight="100dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/thomas_michael_shelby_009"
+        app:layout_constraintBottom_toTopOf="@id/barrier2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.3"
+        android:contentDescription="@string/button_play"
+        app:backgroundTint="#FFFFFF"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/image_content_by_link"
+        app:layout_constraintEnd_toEndOf="@+id/image_content_by_link"
+        app:layout_constraintStart_toStartOf="@+id/image_content_by_link"
+        app:layout_constraintTop_toTopOf="@+id/image_content_by_link"
+        app:srcCompat="@drawable/button_play_arrow_24" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="image_content_by_link, button_play, line" />
+
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="0.7dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/barrier2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="content" />
+        app:constraint_referenced_ids="image_content_by_link" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/icLikes"
@@ -99,11 +154,13 @@
         android:contentDescription="@string/like_icon"
         android:fontFamily="sans-serif"
         android:paddingTop="0dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/standart_paddin_material_button_4dp"
         android:textColor="@color/dark_grey"
         app:backgroundTint="@android:color/transparent"
         app:icon="@drawable/toggle_button_ic_like_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:layout_constraintTop_toBottomOf="@id/line"
         tools:ignore="TouchTargetSizeCheck"
         tools:text="@sample/posts.json/testPostData/likes" />
 
@@ -118,12 +175,12 @@
         android:checkable="false"
         android:contentDescription="@string/share_icon"
         android:fontFamily="sans-serif"
-        android:paddingTop="0dp"
         android:paddingStart="0dp"
+        android:paddingTop="0dp"
         android:textColor="@color/dark_grey"
         app:icon="@drawable/baseline_share_24"
         app:layout_constraintStart_toEndOf="@id/icLikes"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:layout_constraintTop_toBottomOf="@id/line"
         tools:ignore="RtlSymmetry,TouchTargetSizeCheck"
         tools:text="@sample/posts.json/testPostData/shares" />
 
@@ -135,15 +192,17 @@
         android:layout_marginTop="@dimen/margins_for_icons"
         android:layout_marginEnd="@dimen/margins_for_icons"
         android:checkable="false"
+        android:paddingEnd="@dimen/standart_paddin_material_button_4dp"
+        android:paddingStart="@dimen/standart_paddin_material_button_4dp"
         android:contentDescription="@string/eye_icon"
         android:fontFamily="sans-serif"
         android:paddingTop="0dp"
         android:textColor="@color/dark_grey"
         app:icon="@drawable/baseline_remove_red_eye_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:layout_constraintTop_toBottomOf="@id/line"
         tools:ignore="TouchTargetSizeCheck"
-        tools:text= "@sample/posts.json/testPostData/views" />
+        tools:text="@sample/posts.json/testPostData/views" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context="._Activity.NewPostActivity">
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:labelFor="@id/edit"
+        android:paddingLeft="@dimen/padding_new_post_4dp"
+        android:paddingRight="@dimen/padding_new_post_4dp"
+        android:singleLine="true"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_app_bar_height_60dp"
+        android:layout_gravity="bottom" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ok"
+        android:layout_width="@dimen/fab_new_post_dimension_54dp"
+        android:layout_height="@dimen/fab_new_post_dimension_54dp"
+        android:contentDescription="@string/description_post_save"
+        app:layout_anchor="@+id/bottomAppBar"
+        app:layout_anchorGravity="center"
+        app:srcCompat="@drawable/ic_ok_24"
+
+        tools:ignore="ImageContrastCheck" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/icAttach"-->
+    <!--android:layout_width="@dimen/icAttach_dimension_54dp"-->
+    <!--android:layout_height="@dimen/icAttach_dimension_54dp"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:layout_marginEnd="@dimen/margin_end_ic_attach_32dp"-->
+    <!--android:layout_marginBottom="@dimen/margin_bottom_ic_attach_74dp"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:contentDescription="@string/attach"-->
+    <!--android:rotation="42"-->
+    <!--app:srcCompat="@drawable/baseline_attach_file_24" />-->
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--android:id="@+id/icAttach"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:contentDescription="@string/description_post_save"-->
+    <!--android:layout_marginBottom="@dimen/margin_bottom_ic_attach_74dp"-->
+    <!--android:layout_marginEnd="@dimen/common_spacing"-->
+    <!--android:rotation="42"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--app:srcCompat="@drawable/baseline_attach_file_24"-->
+    <!--tools:ignore="ImageContrastCheck"-->
+    <!--app:backgroundTint="#FFFFFF" android:alpha="0.3"-->
+    <!--    />-->
+

@@ -1,4 +1,4 @@
-package ru.netology.nmedia
+package ru.netology.nmedia.other_date_and_service
 
 // there are various services here
 
@@ -34,14 +34,6 @@ object AndroidUtils {
     }
 }
 
-//---------------------------------------------------------
+//------------------------end
 
-
-//
-//fun viewBinding(parent: ViewGroup, binding: ViewBinding): ViewBinding {
-//    val inflater = LayoutInflater.from(parent.context)
-//    val result = binding.inflate(inflater, parent, false)
-//    return result
-//
-//}
 

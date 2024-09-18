@@ -22,4 +22,9 @@
     <string name="ic_edit_pencil">карандаш</string>
     <string name="edit_message">Редактировать сообщение</string>
     <string name="cross">крест</string>
+    <string name="chooser_share_post">Заголовок диалога</string>
+    <string name="error_empty_content2">Сообщение отсутствует</string>
+    <string name="description_post_save">Сохранить</string>
+    <string name="plus_button">Плюс</string>
+    <string name="video">Видео</string>
 </resources>

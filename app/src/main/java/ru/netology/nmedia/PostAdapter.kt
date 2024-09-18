@@ -1,12 +1,15 @@
 package ru.netology.nmedia
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.databinding.CardPostBinding
+import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_service.clicksInVkFormat
 
 //typealias OnLikeListener = (post: Post) -> Unit
 //typealias OnShareListener = (post: Post) -> Unit
@@ -20,6 +23,8 @@ interface OnInteractionListener {
     fun onRemove(post: Post) {}
     fun onShare(post: Post) {}
     fun onEye(post: Post) {}
+    fun onImageClick(post: Post) {}
+    fun onPlayClick(post: Post) {}
 }
 
 //-------------------- PostAdapter -------------------
@@ -48,16 +53,21 @@ class PostAdapter(
 class PostHolder(
     private val view: CardPostBinding,
     private val onInteractionListener: OnInteractionListener,
-    ) :
+) :
     RecyclerView.ViewHolder(view.root) {
     fun bind(post: Post) {
         view.apply {
+
+            if (!post.link.isNullOrBlank()) group.visibility = View.VISIBLE
+            else group.visibility = View.GONE
+
             author.text = post.author
             published.text = post.published
             content.text = post.content
             icLikes.text = clicksInVkFormat(post.likes)
             icShares.text = clicksInVkFormat(post.shares)
             icEye.text = clicksInVkFormat(post.views)
+
 
             icLikes.isChecked = post.likedByMe
 
@@ -70,6 +80,14 @@ class PostHolder(
 
             icEye.setOnClickListener {
                 onInteractionListener.onEye(post)
+            }
+
+            imageContentByLink.setOnClickListener {
+                onInteractionListener.onImageClick(post)
+            }
+
+            buttonPlay.setOnClickListener {
+                onInteractionListener.onPlayClick(post)
             }
 
             icMenu.setOnClickListener {

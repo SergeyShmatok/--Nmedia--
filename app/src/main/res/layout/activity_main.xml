@@ -4,150 +4,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="._Activity.MainActivity"
+    >
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_container"
+        android:id="@+id/recycler_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteX="-64dp"
-        tools:layout_editor_absoluteY="-306dp"
+        tools:layout_editor_absoluteX="-72dp"
+        tools:layout_editor_absoluteY="-16dp"
         tools:listitem="@layout/card_post" />
 
-    <View
-        android:id="@+id/line1"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/plus"
         android:layout_width="wrap_content"
-        android:layout_height="0.7dp"
-        android:background="@color/light_grey"
-        app:layout_constraintBottom_toTopOf="@+id/editTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/editTop"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        app:constraint_referenced_ids="icEdit, phrase_edit_message, editable_message, icCross" />
-
-
-    <ImageView
-        android:id="@+id/icEdit"
-        android:layout_width="@dimen/standart_button_width"
-        android:layout_height="@dimen/standart_button_height"
-        android:background="@color/background_light"
-        android:contentDescription="@string/ic_edit_pencil"
-        android:padding="@dimen/padding_ic_edit"
-        app:layout_constraintBottom_toTopOf="@id/line2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTop"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
-
-    <TextView
-        android:id="@+id/phrase_edit_message"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
-        android:background="@color/background_light"
-        android:paddingStart="@dimen/padding_start_text_8dp"
-        android:paddingTop="@dimen/padding_top_edit_message_10dp"
-        android:text="@string/edit_message"
-        android:textColor="#0277BD"
-
-        app:layout_constraintBottom_toTopOf="@+id/editable_message"
-        app:layout_constraintEnd_toStartOf="@+id/icCross"
-        app:layout_constraintStart_toEndOf="@+id/icEdit"
-        app:layout_constraintTop_toTopOf="@+id/icEdit"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:ignore="RtlSymmetry,TextSizeCheck"
-        tools:text="@string/edit_message" />
-
-    <TextView
-        android:id="@+id/editable_message"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:background="@color/background_light"
-        android:ellipsize="end"
-        android:paddingStart="@dimen/padding_start_text_8dp"
-        android:paddingTop="@dimen/padding_top_editable_message_2dp"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="@+id/icEdit"
-        app:layout_constraintEnd_toStartOf="@+id/icCross"
-        app:layout_constraintStart_toEndOf="@+id/icEdit"
-        app:layout_constraintTop_toBottomOf="@+id/phrase_edit_message"
-        tools:ignore="RtlSymmetry,TextSizeCheck"
-        tools:text="@sample/posts.json/data/content" />
-
-
-    <ImageView
-        android:id="@+id/icCross"
-        android:layout_width="@dimen/standart_button_width"
-        android:layout_height="@dimen/standart_button_height"
-        android:background="@color/background_light"
-        android:contentDescription="@string/cross"
-        android:padding="@dimen/cross_paddin_8dp"
-        app:layout_constraintBottom_toTopOf="@id/line2"
+        android:layout_margin="@dimen/common_spacing"
+        android:contentDescription="@string/plus_button"
+        app:srcCompat="@drawable/baseline_plus_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/phrase_edit_message"
-        app:layout_constraintTop_toTopOf="@id/editTop"
-        app:srcCompat="@drawable/baseline_close_48"
-        app:tint="@color/dark_grey" />
-
-
-    <View
-        android:id="@+id/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="0.7dp"
-        android:background="@color/light_grey"
-        app:layout_constraintBottom_toTopOf="@+id/toolsTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_message"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/toolsTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        app:constraint_referenced_ids="content, send" />
-
-    <EditText
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background_light"
-        android:hint="@string/hint_text"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:padding="@dimen/common_spacing"
-        android:paddingEnd="@dimen/standart_button_width"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolsTop"
-        tools:ignore="RtlSymmetry" />
-
-    <ImageButton
-        android:id="@+id/send"
-        android:layout_width="@dimen/standart_button_width"
-        android:layout_height="@dimen/standart_button_height"
-        android:background="@color/background_light"
-        android:contentDescription="@string/send_button_description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_send" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:constraint_referenced_ids="icEdit, phrase_edit_message,
-            editable_message, line1, icCross" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--    <View-->
+    <!--        android:id="@+id/line1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="0.7dp"-->
+    <!--        android:background="@color/light_grey"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/editTop"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    <!--    <androidx.constraintlayout.widget.Barrier-->
+    <!--        android:id="@+id/editTop"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:barrierDirection="top"-->
+    <!--        app:constraint_referenced_ids="icEdit, phrase_edit_message, editable_message, icCross" />-->
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/icEdit"-->
+    <!--        android:layout_width="@dimen/standart_button_width"-->
+    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:contentDescription="@string/ic_edit_pencil"-->
+    <!--        android:padding="@dimen/padding_ic_edit"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/line2"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/editTop"-->
+    <!--        app:srcCompat="@android:drawable/ic_menu_edit" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/phrase_edit_message"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="32dp"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:paddingStart="@dimen/padding_start_text_8dp"-->
+    <!--        android:paddingTop="@dimen/padding_top_edit_message_10dp"-->
+    <!--        android:text="@string/edit_message"-->
+    <!--        android:textColor="#0277BD"-->
+
+    <!--        app:layout_constraintBottom_toTopOf="@+id/editable_message"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/icCross"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/icEdit"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/icEdit"-->
+    <!--        app:layout_constraintVertical_chainStyle="packed"-->
+    <!--        tools:ignore="RtlSymmetry,TextSizeCheck"-->
+    <!--        tools:text="@string/edit_message" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/editable_message"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="24dp"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:ellipsize="end"-->
+    <!--        android:paddingStart="@dimen/padding_start_text_8dp"-->
+    <!--        android:paddingTop="@dimen/padding_top_editable_message_2dp"-->
+    <!--        android:singleLine="true"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/icEdit"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/icCross"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/icEdit"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/phrase_edit_message"-->
+    <!--        tools:ignore="RtlSymmetry,TextSizeCheck"-->
+    <!--        tools:text="@sample/posts.json/data/content" />-->
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/icCross"-->
+    <!--        android:layout_width="@dimen/standart_button_width"-->
+    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:contentDescription="@string/cross"-->
+    <!--        android:padding="@dimen/cross_paddin_8dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/line2"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/phrase_edit_message"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/editTop"-->
+    <!--        app:srcCompat="@drawable/baseline_close_48"-->
+    <!--        app:tint="@color/dark_grey" />-->
+
+
+    <!--    <View-->
+    <!--        android:id="@+id/line2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="0.7dp"-->
+    <!--        android:background="@color/light_grey"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/toolsTop"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editable_message"-->
+
+    <!--        />-->
+
+
+    <!--    <androidx.constraintlayout.widget.Barrier-->
+    <!--        android:id="@+id/toolsTop"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:barrierDirection="top"-->
+    <!--        app:constraint_referenced_ids="content, send" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/content"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:hint="@string/hint_text"-->
+    <!--        android:importantForAutofill="no"-->
+    <!--        android:inputType="textMultiLine"-->
+    <!--        android:padding="@dimen/common_spacing"-->
+    <!--        android:paddingEnd="@dimen/standart_button_width"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/toolsTop"-->
+    <!--        tools:ignore="RtlSymmetry" />-->
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/send"-->
+    <!--        android:layout_width="@dimen/standart_button_width"-->
+    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:background="@color/background_light"-->
+    <!--        android:contentDescription="@string/send_button_description"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:srcCompat="@android:drawable/ic_menu_send" />-->
+
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/group"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:constraint_referenced_ids="icEdit, phrase_edit_message,-->
+    <!--            editable_message, line1, icCross, content, send" />-->
