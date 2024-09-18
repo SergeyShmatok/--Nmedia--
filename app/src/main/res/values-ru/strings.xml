@@ -27,4 +27,7 @@
     <string name="description_post_save">Сохранить</string>
     <string name="plus_button">Плюс</string>
     <string name="video">Видео</string>
+    <string name="attach">Прикрепить</string>
+    <string name="image_by_link">Изображение ссылки</string>
+    <string name="button_play">Кнопка плей</string>
 </resources>
