@@ -3,10 +3,8 @@ package ru.netology.nmedia._Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.PopupMenu
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
-import ru.netology.nmedia.R
 import ru.netology.nmedia._Activity.NewPostActivity.Companion.KEY_TEXT
 import ru.netology.nmedia.databinding.ActivityNewPostBinding
 
