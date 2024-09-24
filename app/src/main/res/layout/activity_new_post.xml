@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context="._Activity.NewPostActivity">
+    tools:context="._Activity.NewPostActivity"
+    >
 
     <EditText
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
+        android:hint="@string/text_hint_for_new_post"
         android:gravity="start|top"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:labelFor="@id/edit"
-        android:paddingLeft="@dimen/padding_new_post_4dp"
-        android:paddingRight="@dimen/padding_new_post_4dp"
+        android:paddingLeft="@dimen/new_post_padding_4dp"
+        android:paddingRight="@dimen/new_post_padding_4dp"
+        android:padding="0dp"
         android:singleLine="true"
         tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
@@ -26,7 +29,8 @@
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_app_bar_height_60dp"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

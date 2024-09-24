@@ -30,4 +30,5 @@
     <string name="attach">Прикрепить</string>
     <string name="image_by_link">Изображение ссылки</string>
     <string name="button_play">Кнопка плей</string>
+    <string name="text_hint_for_new_post"><i>Написать пост</i></string>
 </resources>

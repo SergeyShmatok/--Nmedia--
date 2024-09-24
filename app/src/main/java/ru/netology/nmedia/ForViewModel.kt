@@ -1,7 +1,9 @@
 package ru.netology.nmedia
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import ru.netology.nmedia._Repository.PostRepositoryFilesImpl
 import ru.netology.nmedia.other_date_and_service.Post
 
 private val empty = Post(
@@ -13,11 +15,11 @@ private val empty = Post(
     link = "",
 )
 
-class PostViewModel : ViewModel() {
+class PostViewModel(application: Application) : AndroidViewModel(application) {
 
 //----------------------------- Data -----------------------------
 
-    private val repository1 = PostRepositoryModel()
+    private val repository1 = PostRepositoryFilesImpl(application)
 
     val data = repository1.getAll()
 
@@ -31,7 +33,7 @@ class PostViewModel : ViewModel() {
 
     fun removeById(id: Long) = repository1.removeById(id)
 
-//---------------------------- Editing ----------------------------
+//---------------------------- Editing -----------------------------
 
     private val edited = MutableLiveData(empty)
 

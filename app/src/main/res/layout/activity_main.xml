@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteX="-72dp"
-        tools:layout_editor_absoluteY="-16dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-72dp"
         tools:listitem="@layout/card_post" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,8 +53,8 @@
 
     <!--    <ImageView-->
     <!--        android:id="@+id/icEdit"-->
-    <!--        android:layout_width="@dimen/standart_button_width"-->
-    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:layout_width="@dimen/standard_button_width"-->
+    <!--        android:layout_height="@dimen/standard_button_height"-->
     <!--        android:background="@color/background_light"-->
     <!--        android:contentDescription="@string/ic_edit_pencil"-->
     <!--        android:padding="@dimen/padding_ic_edit"-->
@@ -100,11 +100,11 @@
 
     <!--    <ImageView-->
     <!--        android:id="@+id/icCross"-->
-    <!--        android:layout_width="@dimen/standart_button_width"-->
-    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:layout_width="@dimen/standard_button_width"-->
+    <!--        android:layout_height="@dimen/standard_button_height"-->
     <!--        android:background="@color/background_light"-->
     <!--        android:contentDescription="@string/cross"-->
-    <!--        android:padding="@dimen/cross_paddin_8dp"-->
+    <!--        android:padding="@dimen/cross_padding_8dp"-->
     <!--        app:layout_constraintBottom_toTopOf="@id/line2"-->
     <!--        app:layout_constraintEnd_toEndOf="parent"-->
     <!--        app:layout_constraintStart_toEndOf="@+id/phrase_edit_message"-->
@@ -150,8 +150,8 @@
 
     <!--    <ImageButton-->
     <!--        android:id="@+id/send"-->
-    <!--        android:layout_width="@dimen/standart_button_width"-->
-    <!--        android:layout_height="@dimen/standart_button_height"-->
+    <!--        android:layout_width="@dimen/standard_button_width"-->
+    <!--        android:layout_height="@dimen/standard_button_height"-->
     <!--        android:background="@color/background_light"-->
     <!--        android:contentDescription="@string/send_button_description"-->
     <!--        app:layout_constraintBottom_toBottomOf="parent"-->

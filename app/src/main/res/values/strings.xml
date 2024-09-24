@@ -29,6 +29,7 @@
     <string name="attach">Attach</string>
     <string name="image_by_link">image_by_link</string>
     <string name="button_play">button play</string>
+    <string name="text_hint_for_new_post"><i>Write a post</i></string>
 
 
 </resources>
