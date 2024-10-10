@@ -25,6 +25,7 @@ interface OnInteractionListener {
     fun onEye(post: Post) {}
     fun onImageClick(post: Post) {}
     fun onPlayClick(post: Post) {}
+    fun onScreenClick(post: Post) {}
 }
 
 //-------------------- PostAdapter -------------------
@@ -71,6 +72,7 @@ class PostHolder(
 
             icLikes.isChecked = post.likedByMe
 
+
             icLikes.setOnClickListener {
                 onInteractionListener.onLike(post)
             }
@@ -113,6 +115,15 @@ class PostHolder(
                     }
 
                 }.show()
+            }
+
+            root.setOnClickListener{
+                onInteractionListener.onScreenClick(post)
+            }
+
+            content.setOnClickListener{
+                onInteractionListener.onScreenClick(post)
+
             }
 
         }

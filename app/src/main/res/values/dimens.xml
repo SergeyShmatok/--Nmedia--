@@ -27,4 +27,5 @@
     <dimen name="material_button_standard_padding_4dp">4dp</dimen>
     <dimen name="fab_play_padding_top_58dp">58dp</dimen>
     <dimen name="image_content_padding_top_14dp">14dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

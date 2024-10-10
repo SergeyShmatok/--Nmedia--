@@ -12,19 +12,16 @@
         tools:targetApi="34">
 
         <activity
-            android:name="._Activity.MainActivity"
-            android:exported="true">
+            android:name="._Activity.AppActivity"
+            android:exported="true"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
-        <activity
-            android:name="._Activity.IntentHandlerActivity"
-            android:exported="true"
-            >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -32,13 +29,8 @@
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
-        </activity>
 
-        <activity
-            android:name="._Activity.NewPostActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false"
-            />
+        </activity>
 
     </application>
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navController"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_main"
+    tools:context="._Activity.AppActivity">
+
+</fragment>
+
+    <!--    1. android:id="@+id/controllerNav". По этому атрибуту будет найден контроллер навигации-->
+
+    <!--    2. android:name="androidx.navigation.fragment.NavHostFragment". Определение того, -->
+    <!--    что фрагмент является NavHostFragment.-->
+
+    <!--    3. Параметр "defaultNavHost" определяет, что этот контейнер навигации является-->
+    <!--    контейнером по умолчанию и именно к нему будет применено использование системной-->
+    <!--    кнопки "Назад".-->
+
+    <!--    4. app:navGraph="@navigation/nav_main". Здесь мы определяем, что этот фрагмент-->
+    <!--    будет использовать этот навигационный граф. И это не что иное, как файл ресурсов -->
+    <!--    навигации, который мы создали.-->
+
+
+
