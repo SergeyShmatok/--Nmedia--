@@ -32,70 +32,69 @@ class BlankFragment : Fragment() {
 
         viewModel.data.observe(viewLifecycleOwner) { posts ->
 
-            posts.forEach { post ->
-                if (post.id == postId)
+            posts.find { it.id == postId }?.let { post ->
 
-                    with(blankBinding) {
+                with(blankBinding) {
 
-                        author.text = post.author
-                        published.text = post.published
-                        content.text = post.content
-                        icLikes.text = clicksInVkFormat(post.likes)
-                        icShares.text = clicksInVkFormat(post.shares)
-                        icEye.text = clicksInVkFormat(post.views)
+                    author.text = post.author
+                    published.text = post.published
+                    content.text = post.content
+                    icLikes.text = clicksInVkFormat(post.likes)
+                    icShares.text = clicksInVkFormat(post.shares)
+                    icEye.text = clicksInVkFormat(post.views)
 
-                        icLikes.isChecked = post.likedByMe
+                    icLikes.isChecked = post.likedByMe
 
-                        icLikes.setOnClickListener {
-                            viewModel.likeById(post.id)
+                    icLikes.setOnClickListener {
+                        viewModel.likeById(post.id)
+                    }
+                    icShares.setOnClickListener {
+                        val intent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            type = "text/plain"
+                            putExtra(Intent.EXTRA_TEXT, post.content)
+
                         }
-                        icShares.setOnClickListener {
-                            val intent = Intent().apply {
-                                action = Intent.ACTION_SEND
-                                type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, post.content)
+                        val shareIntent =
+                            Intent.createChooser(intent, getString(R.string.chooser_share_post))
+                        startActivity(shareIntent)
+                        viewModel.clickingShareById(post.id)
+                    }
 
-                            }
-                            val shareIntent =
-                                Intent.createChooser(intent, getString(R.string.chooser_share_post))
-                            startActivity(shareIntent)
-                            viewModel.clickingShareById(post.id)
-                        }
+                    icEye.setOnClickListener {
+                        viewModel.clickingEyeById(post.id)
+                    }
 
-                        icEye.setOnClickListener {
-                            viewModel.clickingEyeById(post.id)
-                        }
+                    icMenu.setOnClickListener { view ->
+                        PopupMenu(view.context, view).apply {
+                            inflate(R.menu.popup_post_menu)
+                            setOnMenuItemClickListener { item ->
+                                when (item.itemId) {
 
-                        icMenu.setOnClickListener { view ->
-                            PopupMenu(view.context, view).apply {
-                                inflate(R.menu.popup_post_menu)
-                                setOnMenuItemClickListener { item ->
-                                    when (item.itemId) {
-
-                                        R.id.remove -> {
-                                            findNavController().navigateUp()
-                                            viewModel.removeById(post.id)
-                                            true
-                                        }
-
-                                        R.id.edit -> {
-                                            viewModel.edit(post)
-                                            findNavController().navigate(R.id.action_blankFragment_to_newPostFragment,
-                                                Bundle().apply { textArg = post.content }
-                                            )
-                                            true
-                                        }
-
-                                        else -> false
-
+                                    R.id.remove -> {
+                                        findNavController().navigateUp()
+                                        viewModel.removeById(post.id)
+                                        true
                                     }
+
+                                    R.id.edit -> {
+                                        viewModel.edit(post)
+                                        findNavController().navigate(R.id.action_blankFragment_to_newPostFragment,
+                                            Bundle().apply { textArg = post.content }
+                                        )
+                                        true
+                                    }
+
+                                    else -> false
 
                                 }
 
-                            }.show()
-                        }
+                            }
 
+                        }.show()
                     }
+
+                }
             }
 
         }

@@ -3,14 +3,13 @@ package ru.netology.nmedia.other_date_and_service
 // here are the data-classes: Posts
 
 data class Post(
-    val id: Long = 0,
+    val id: Long,
     val author: String,
     val content: String,
     val published: String,
-    val likes: Int = 999,
-    val shares: Int = 1699,
-    val views: Int = 1_099_999,
-    val likedByMe: Boolean = false,
+    val likes: Int = 0,
+    val shares: Int = 0,
+    val views: Int = 0,
+    val likedByMe: Boolean,
     val link: String?,
 )
-

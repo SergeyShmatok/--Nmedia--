@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -22,6 +23,13 @@ class NewPostFragment : Fragment() {
         val newPostBinding = FragmentNewPostBinding.inflate(inflater, container, false)
 
         val viewModel: PostViewModel by viewModels(::requireParentFragment)
+
+// в случае когда пользователь покидает фрагмент нажатием системной кнопки "Назад"
+// можно добавить соответствующий обработчик в onCreateView:
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner) {
+            viewModel.editedIsEmpty()
+            findNavController().navigateUp()
+        }
 
         arguments?.textArg?.let { newPostBinding.edit.setText(it) }
 
