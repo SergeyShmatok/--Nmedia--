@@ -3,7 +3,7 @@ package ru.netology.nmedia
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import ru.netology.nmedia._Repository.PostRepositorySQLiteImpl
+import ru.netology.nmedia._Repository.PostRepositorySQLRoomImpl
 import ru.netology.nmedia.other_date_and_service.Post
 
 private val empty = Post(
@@ -19,7 +19,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
 //----------------------------- Data -----------------------------
 
-    private val repository1 = PostRepositorySQLiteImpl(AppDb.getInstance(application).postDao)
+    private val repository1 = PostRepositorySQLRoomImpl(AppDb.getInstance(application).postDao)
 
     val data = repository1.getAll()
 
@@ -46,7 +46,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         edited.value = empty
     }
 
-    fun editedIsEmpty () {
+    fun editedIsEmpty() {
         edited.value = empty
     }
 
@@ -59,6 +59,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
             edited.value = it.copy(content = text)
         }
     }
+
 }
 
 //------------------------- End
