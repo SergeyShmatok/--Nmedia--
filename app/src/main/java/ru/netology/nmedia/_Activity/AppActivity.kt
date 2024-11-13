@@ -1,6 +1,9 @@
 package ru.netology.nmedia._Activity
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -15,6 +18,7 @@ class AppActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val appBinding = ActivityAppBinding.inflate(layoutInflater)
         setContentView(appBinding.root)
+        requestNotificationsPermission()
 
         intent?.let {
             if (it.action != Intent.ACTION_SEND) {
@@ -41,4 +45,22 @@ class AppActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun requestNotificationsPermission() { // - чтобы пользователю показывалось окно с предложением
+        // разрешить показывать уведомления
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            // Проверка версии Android (если ниже TIRAMISU, то ничего не делает)
+            return
+        }
+
+        val permission = Manifest.permission.POST_NOTIFICATIONS
+
+        if (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
+            return
+        }
+
+        requestPermissions(arrayOf(permission), 1) // стандартный метод активити
+    }
+
+
 }

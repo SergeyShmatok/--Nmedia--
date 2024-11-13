@@ -2,7 +2,11 @@ plugins {
     alias(libs.plugins.android.application) // - // -
     alias(libs.plugins.jetbrains.kotlin.android) // - тут (в модуле) эти плагины уже подключены
     id 'org.jetbrains.kotlin.kapt' // плагины для room
+
+    id 'com.google.gms.google-services'
+    // Add the Google services Gradle plugin
 }
+
 
 android {
     namespace 'ru.netology.nmedia'
@@ -65,8 +69,16 @@ dependencies {
     implementation libs.androidx.lifecycle.livedata.ktx
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.room.runtime
+    implementation libs.firebase.messaging.ktx
+    implementation libs.play.services.base
+
+
     //noinspection KaptUsageInsteadOfKsp
     kapt libs.androidx.room.compiler
+
+    // Import the Firebase BoM
+    implementation platform(libs.firebase.bom)
+
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit

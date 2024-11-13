@@ -3,5 +3,6 @@ plugins {
 alias(libs.plugins.android.application) apply false // тут подключается плагин для Android приложений
     alias(libs.plugins.jetbrains.kotlin.android) apply false // тут подключается плагин для Kotlin для Android
     id 'org.jetbrains.kotlin.kapt' version '2.0.21' apply false
+    id 'com.google.gms.google-services' version '4.4.2' apply false // Add the dependency for the Google services Gradle plugin
 
 }
