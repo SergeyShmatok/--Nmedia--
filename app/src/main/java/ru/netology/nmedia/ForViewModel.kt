@@ -3,8 +3,9 @@ package ru.netology.nmedia
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import org.w3c.dom.Text
 import ru.netology.nmedia._Repository.PostRepositorySQLRoomImpl
-import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_utils.Post
 
 private val empty = Post(
     id = 0,
@@ -22,6 +23,18 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     private val repository1 = PostRepositorySQLRoomImpl(AppDb.getInstance(application).postDao)
 
     val data = repository1.getAll()
+
+//                            Черновик
+
+    private var draft: String = ""
+
+    fun saveDraft(text: String) { draft = text }
+
+    fun dropDraft() { draft = "" }
+
+    fun getDraft() = draft
+
+    // Вариант для хранения в памяти. Чтобы черновик сохранялся при перезапуске приложения, нужно хранить в SQL.
 
 //--------------------------- Function ---------------------------
 

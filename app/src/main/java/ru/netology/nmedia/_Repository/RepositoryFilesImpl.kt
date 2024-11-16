@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_utils.Post
 
 
 class PostRepositoryFilesImpl(private val context: Context) : PostRepositoryFun {

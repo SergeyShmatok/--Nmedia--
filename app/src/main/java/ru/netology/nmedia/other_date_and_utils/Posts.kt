@@ -1,4 +1,4 @@
-package ru.netology.nmedia.other_date_and_service
+package ru.netology.nmedia.other_date_and_utils
 
 // here are the data-classes: Posts
 

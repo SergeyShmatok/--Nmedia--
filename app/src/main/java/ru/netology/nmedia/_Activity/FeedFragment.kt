@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.OnInteractionListener
-import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_utils.Post
 import ru.netology.nmedia.PostAdapter
 import ru.netology.nmedia.PostViewModel
 import ru.netology.nmedia.R

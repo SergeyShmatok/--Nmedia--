@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context="._Activity.BlankFragment" >
 
+<!--    Для упрощения макета, если он идентичный макету с которого осуществляется переход, -->
+<!--    можно использовать теги <include> и <merge>, вместо копирования данных всей разметки -
+        https://developer.android.com/develop/ui/views/layout/improving-layouts/reusing-layouts.
+        (Тут они немного отличаются, поэтому <include> и <merge> не используются) -->
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"

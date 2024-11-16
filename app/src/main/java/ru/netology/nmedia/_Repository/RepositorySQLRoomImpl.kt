@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import ru.netology.nmedia.PostEntity
 import ru.netology.nmedia.dao.PostDao
-import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_utils.Post
 
 class PostRepositorySQLRoomImpl(
     private val dao: PostDao

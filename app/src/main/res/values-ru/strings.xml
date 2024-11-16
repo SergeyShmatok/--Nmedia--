@@ -35,4 +35,5 @@
     <string name="channel_remote_description">Уведомления с удалённого сервера</string>
     <string name="notification_user_liked">Пользователь %1$s лайкнул пост автора: %2$s</string>
     <string name="notification_user_published_post">Пользователь %1$s опубликовал новый пост: %2$s</string>
+    <string name="if_such_message_is_missing">Чтобы иметь возможность получать новый, замечательный вид «enum» обновите приложение или обратитесь в поддержку!</string>
 </resources>

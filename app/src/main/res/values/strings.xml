@@ -34,6 +34,7 @@
     <string name="channel_remote_description">Notifications from a remote server</string>
     <string name="notification_user_liked">User %1$s liked %2$s\'s post</string>
     <string name="notification_user_published_post">User %1$s published a post: %2$s</string>
+    <string name="if_such_message_is_missing">To be able to get the new, wonderful view of \"enum\" update the application or contact support!</string>
 
 
 </resources>

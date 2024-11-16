@@ -16,6 +16,7 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.google.gson.Gson
 import ru.netology.nmedia._Activity.AppActivity
+import kotlin.random.Random
 
 class FCMService: FirebaseMessagingService() {
 
@@ -45,19 +46,33 @@ class FCMService: FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
 
         message.data[action1]?.let {
-
             when (it) {
                 Action.LIKE.toString() -> handleLike(gson.fromJson(message.data[content1], Like::class.java))
-            }
-
+                 }
             }
 
             message.data[action2]?.let {
                 when (it) {
                 Action.NewPost.toString() -> handlePost(gson.fromJson(message.data[content2], Post::class.java))
                 }
-
             }
+
+        message.data["action"]?.let { // Второе решение
+
+            try {
+                when (Action.valueOf(it)) {
+                    Action.LIKE -> handleLike(gson.fromJson(message.data[content2], Like::class.java))
+                    else -> {}
+                }
+
+        } catch (e: IllegalArgumentException) {
+                    ifSuchMessageIsMissing()
+            //return@let
+
+        }
+
+
+        }
 
 }
 
@@ -97,6 +112,24 @@ private fun pendingIntent (): PendingIntent {
 
         NotificationManagerCompat.from(this).notify(1, notification) // если есть - показ уведомления
     }
+
+    private fun ifSuchMessageIsMissing () {
+
+        val notification = Builder(this, channelId) // создание уведомления
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(getString(R.string.if_such_message_is_missing))
+            .setContentIntent(pendingIntent())
+            .setStyle(BigTextStyle().bigText(getString(R.string.if_such_message_is_missing)))
+            .setAutoCancel(true)
+            .build()
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            return
+        } // есть ли у приложения разрешение на показ уведомления
+
+        NotificationManagerCompat.from(this).notify(Random.nextInt(100), notification) // если есть - показ уведомления
+    }
+
 
 
 

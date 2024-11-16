@@ -2,7 +2,7 @@ package ru.netology.nmedia
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import ru.netology.nmedia.other_date_and_service.Post
+import ru.netology.nmedia.other_date_and_utils.Post
 
 
 @Entity

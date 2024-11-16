@@ -13,8 +13,8 @@ import ru.netology.nmedia.PostViewModel
 import ru.netology.nmedia.R
 import ru.netology.nmedia._Activity.NewPostFragment.Companion.textArg
 import ru.netology.nmedia.databinding.FragmentBlankBinding
-import ru.netology.nmedia.other_date_and_service.LongArg
-import ru.netology.nmedia.other_date_and_service.clicksInVkFormat
+import ru.netology.nmedia.other_date_and_utils.LongArg
+import ru.netology.nmedia.other_date_and_utils.clicksInVkFormat
 
 class BlankFragment : Fragment() {
 
@@ -30,12 +30,11 @@ class BlankFragment : Fragment() {
 
         val postId = arguments?.longArg
 
-        viewModel.data.observe(viewLifecycleOwner) { posts ->
-
-            posts.find { it.id == postId }?.let { post ->
+        viewModel.data.observe(viewLifecycleOwner) { posts -> // Это решение можно сделать через PostHolder,
+                                                              // чтобы не писать лишний код (см. итоговый вебинар),
+            posts.find { it.id == postId }?.let { post ->     // но так тоже можно.
 
                 with(blankBinding) {
-
                     author.text = post.author
                     published.text = post.published
                     content.text = post.content

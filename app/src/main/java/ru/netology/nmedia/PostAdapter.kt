@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.databinding.CardPostBinding
-import ru.netology.nmedia.other_date_and_service.Post
-import ru.netology.nmedia.other_date_and_service.clicksInVkFormat
+import ru.netology.nmedia.other_date_and_utils.Post
+import ru.netology.nmedia.other_date_and_utils.clicksInVkFormat
 
 //typealias OnLikeListener = (post: Post) -> Unit
 //typealias OnShareListener = (post: Post) -> Unit
